@@ -34,7 +34,7 @@ const Footer = () => {
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@zairosoft.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:hello@zairotech.com', label: 'Email' }
   ];
 
   return (
@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <h3 className="text-3xl font-bold text-gradient mb-4">Zairosoft</h3>
+              <h3 className="text-3xl font-bold text-gradient mb-4">Zairotech</h3>
               <p className="text-background/80 mb-6 leading-relaxed">
                 We specialize in custom software development, mobile apps, and AI solutions 
                 for startups and enterprises globally. Transform your ideas into reality 
@@ -56,7 +56,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-4 w-4 text-accent" />
-                  <span className="text-background/80">hello@zairosoft.com</span>
+                  <span className="text-background/80">hello@zairotech.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-accent" />
@@ -146,7 +146,7 @@ const Footer = () => {
         <div className="py-6 border-t border-background/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-background/60 text-sm">
-              © {currentYear} Zairosoft. All rights reserved.
+              © {currentYear} Zairotech. All rights reserved.
             </p>
             
             {/* Social Links */}

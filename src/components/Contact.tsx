@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      detail: 'zairosoftware@gmail.com',
+      detail: 'zairotechware@gmail.com',
       description: 'Send us your project details'
     },
     {

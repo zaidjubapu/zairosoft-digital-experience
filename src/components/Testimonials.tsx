@@ -7,7 +7,7 @@ const Testimonials = () => {
       role: 'CEO, TechStart Inc.',
       company: 'TechStart Inc.',
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
-      content: 'Zairosoft transformed our business with their exceptional software development. The team delivered beyond our expectations, on time and within budget.',
+      content: 'Zairotech transformed our business with their exceptional software development. The team delivered beyond our expectations, on time and within budget.',
       rating: 5
     },
     {
@@ -23,7 +23,7 @@ const Testimonials = () => {
       role: 'Product Manager, HealthTech Pro',
       company: 'HealthTech Pro',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-      content: 'Working with Zairosoft was seamless. They understood our healthcare requirements and delivered a secure, scalable platform that our users love.',
+      content: 'Working with Zairotech was seamless. They understood our healthcare requirements and delivered a secure, scalable platform that our users love.',
       rating: 5
     },
     {
@@ -39,7 +39,7 @@ const Testimonials = () => {
       role: 'Director, RetailTech Solutions',
       company: 'RetailTech Solutions',
       image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face',
-      content: 'Zairosoft\'s e-commerce platform increased our sales by 150%. Their technical solutions are innovative and perfectly aligned with business goals.',
+      content: 'Zairotech\'s e-commerce platform increased our sales by 150%. Their technical solutions are innovative and perfectly aligned with business goals.',
       rating: 5
     },
     {

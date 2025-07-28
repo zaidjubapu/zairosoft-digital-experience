@@ -28,7 +28,7 @@ const Map = () => {
       .setLngLat([55.2708, 25.2048])
       .setPopup(
         new mapboxgl.Popup({ offset: 25 })
-          .setHTML('<div class="p-2"><strong>Zairo Software</strong><br/>Office 102, building no 6, business bay, dubai, uae</div>')
+          .setHTML('<div class="p-2"><strong>Zairo Technology</strong><br/>Office 102, building no 6, business bay, dubai, uae</div>')
       )
       .addTo(map.current);
 

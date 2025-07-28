@@ -82,7 +82,7 @@ const Careers = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Careers at <span className="text-gradient">Zairosoft</span>
+            Careers at <span className="text-gradient">Zairotech</span>
           </h2>
           <p className="text-subtitle max-w-3xl mx-auto">
             Join our team of passionate developers and help us build the future of software development. 

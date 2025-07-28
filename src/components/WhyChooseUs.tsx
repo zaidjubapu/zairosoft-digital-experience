@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Choose <span className="text-gradient">Zairosoft?</span>
+            Why Choose <span className="text-gradient">Zairotech?</span>
           </h2>
           <p className="text-subtitle max-w-3xl mx-auto">
             We combine technical expertise with business acumen to deliver 
