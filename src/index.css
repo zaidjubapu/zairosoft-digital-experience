@@ -2,39 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Zairosoft Design System - Futuristic Tech Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors */
+    --background: 0 0% 87%;
+    --foreground: 211 87% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 211 87% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 211 87% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 211 87% 34%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 211 87% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 22 89% 63%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 211 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 22 89% 63%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 211 87% 34%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(211 87% 34%), hsl(211 87% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(211 87% 34%) 0%, hsl(211 87% 25%) 50%, hsl(0 0% 87%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(22 89% 63%), hsl(22 89% 55%));
+    --gradient-tech: linear-gradient(45deg, hsl(211 87% 34%) 0%, hsl(22 89% 63%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(211 87% 34% / 0.2);
+    --shadow-glow: 0 0 40px hsl(211 87% 45% / 0.3);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
+    --shadow-float: 0 8px 30px hsl(0 0% 0% / 0.12);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -101,5 +117,66 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium shadow-card hover:shadow-float transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .card-tech {
+    @apply bg-card p-8 rounded-2xl shadow-card hover:shadow-float transition-all duration-300 hover:-translate-y-2 border border-border;
+  }
+  
+  .card-service {
+    @apply bg-card p-6 rounded-xl shadow-card hover:shadow-float transition-all duration-300 hover:-translate-y-1 group cursor-pointer;
+  }
+
+  /* Text Styles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .text-hero {
+    @apply text-5xl md:text-6xl font-bold leading-tight;
+  }
+  
+  .text-subtitle {
+    @apply text-xl md:text-2xl text-muted-foreground leading-relaxed;
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    @apply animate-in fade-in duration-700;
+  }
+  
+  .slide-up {
+    @apply animate-in slide-in-from-bottom-4 duration-500;
+  }
+  
+  .float-animation {
+    @apply animate-pulse hover:animate-bounce;
+  }
+
+  /* Section Styles */
+  .section-padding {
+    @apply py-20 px-4 md:px-8;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto;
+  }
+}
 }
