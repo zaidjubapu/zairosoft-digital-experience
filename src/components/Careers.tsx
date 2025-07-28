@@ -112,7 +112,7 @@ const Careers = () => {
           <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Open Positions</h3>
           <div className="grid lg:grid-cols-2 gap-6">
             {openRoles.map((role, index) => (
-              <div key={index} className="card-service bg-card">
+              <div key={index} className="card-service bg-card group">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">

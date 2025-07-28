@@ -141,7 +141,7 @@
   }
   
   .card-service {
-    @apply bg-card p-6 rounded-xl shadow-card hover:shadow-float transition-all duration-300 hover:-translate-y-1 group cursor-pointer;
+    @apply bg-card p-6 rounded-xl shadow-card hover:shadow-float transition-all duration-300 hover:-translate-y-1 cursor-pointer;
   }
 
   /* Text Styles */

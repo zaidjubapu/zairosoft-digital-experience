@@ -65,7 +65,7 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="card-service">
+            <div key={index} className="card-service group">
               <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
                   src={service.image} 
