@@ -29,19 +29,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      detail: 'hello@zairosoft.com',
+      detail: 'zairosoftware@gmail.com',
       description: 'Send us your project details'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      detail: '+1 (555) 123-4567',
+      detail: '+971566554878',
       description: 'Speak with our team directly'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      detail: '123 Tech Street, Silicon Valley, CA 94102',
+      detail: 'Office 102, building no 6, business bay, dubai ,uae',
       description: 'Our main headquarters'
     }
   ];
