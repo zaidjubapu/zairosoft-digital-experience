@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, Clock, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import Map from './Map';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -177,16 +178,10 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Map */}
             <div className="bg-muted/50 p-6 rounded-xl">
               <h4 className="text-lg font-semibold text-foreground mb-4">Our Location</h4>
-              <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">Interactive Map</p>
-                  <p className="text-sm text-muted-foreground">Silicon Valley, CA</p>
-                </div>
-              </div>
+              <Map />
             </div>
           </div>
         </div>
