@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Mail, Phone, MapPin, Send, Clock, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,26 +7,10 @@ import { Textarea } from '@/components/ui/textarea';
 import Map from './Map';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  // Initialize Formspree form handler
+  const [state, handleSubmit] = useForm("xwpqbaod"); /
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
+  // Contact information and stats
   const contactInfo = [
     {
       icon: Mail,
@@ -41,8 +26,8 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: 'Visit Us',
-      detail: 'Office 102, building no 6, business bay, dubai ,uae',
+      title: 'Visit Office',
+      detail: 'Office 102, building no 6, business bay, Dubai, UAE',
       description: 'Our main headquarters'
     }
   ];
@@ -53,6 +38,19 @@ const Contact = () => {
     { icon: Globe, label: 'Global Reach', value: '25+ Countries' }
   ];
 
+  // Success message after submission
+  if (state.succeeded) {
+    return (
+      <section className="section-padding bg-card">
+        <div className="section-container text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Thanks for reaching out!</h2>
+          <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+        </div>
+      </section>
+    );
+  }
+
+  // Form rendering if not submitted
   return (
     <section id="contact" className="section-padding bg-card">
       <div className="section-container">
@@ -81,8 +79,6 @@ const Contact = () => {
                     name="name"
                     type="text"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
                     className="w-full"
                     placeholder="John Doe"
                   />
@@ -96,14 +92,13 @@ const Contact = () => {
                     name="email"
                     type="email"
                     required
-                    value={formData.email}
-                    onChange={handleChange}
                     className="w-full"
                     placeholder="john@example.com"
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
                   Subject *
@@ -113,13 +108,11 @@ const Contact = () => {
                   name="subject"
                   type="text"
                   required
-                  value={formData.subject}
-                  onChange={handleChange}
                   className="w-full"
                   placeholder="Project Discussion"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message *
@@ -128,15 +121,14 @@ const Contact = () => {
                   id="message"
                   name="message"
                   required
-                  value={formData.message}
-                  onChange={handleChange}
                   rows={6}
                   className="w-full"
                   placeholder="Tell us about your project requirements..."
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
-              
-              <Button type="submit" className="btn-hero w-full">
+
+              <Button type="submit" className="btn-hero w-full" disabled={state.submitting}>
                 Send Message
                 <Send className="ml-2 h-5 w-5" />
               </Button>
@@ -146,7 +138,6 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
-            
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
