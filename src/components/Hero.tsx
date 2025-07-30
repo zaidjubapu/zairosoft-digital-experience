@@ -27,13 +27,12 @@ const Hero = () => {
               Transform your ideas into scalable digital solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-hero group">
+              <Button 
+                className="btn-hero group"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Schedule a Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button className="btn-outline bg-white/10 border-white text-white hover:bg-white hover:text-primary">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
               </Button>
             </div>
           </div>
