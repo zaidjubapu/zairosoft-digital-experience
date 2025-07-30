@@ -8,7 +8,7 @@ import Map from './Map';
 
 const Contact = () => {
   // Initialize Formspree form handler
-  const [state, handleSubmit] = useForm("xwpqbaod"); /
+  const [state, handleSubmit] = useForm("xwpqbaod");
 
   // Contact information and stats
   const contactInfo = [
