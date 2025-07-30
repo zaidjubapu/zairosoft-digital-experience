@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, Clock, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+
 import Map from './Map';
 
 const Contact = () => {
@@ -15,7 +16,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      detail: 'zairotechware@gmail.com',
+      detail: 'zairosoftware@gmail.com',
       description: 'Send us your project details'
     },
     {

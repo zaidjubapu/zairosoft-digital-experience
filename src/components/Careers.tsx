@@ -9,7 +9,7 @@ const Careers = () => {
       location: 'Remote / New York',
       type: 'Full-time',
       salary: '$120k - $160k',
-      skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
+      skills: ['React', 'Node.js', 'TypeScript'],
       description: 'Lead development of complex web applications and mentor junior developers.'
     },
     {
