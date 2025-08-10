@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Mail, Phone, MapPin, Send, Clock, Users, Globe, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+import whatsappIcon from '@/assets/whatsapp.svg';
 import Map from './Map';
 
 const Contact = () => {
@@ -53,10 +54,10 @@ const Contact = () => {
 
   // Form rendering if not submitted
   return (
-    <section id="contact" className="section-padding bg-card">
+    <section id="contact" className="section-padding bg-card relative">
       <Button
-        asChild
-        className="fixed top-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
+        asChild size="icon"
+        className="absolute bottom-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
         aria-label="Chat on WhatsApp"
       >
         <a
@@ -64,7 +65,7 @@ const Contact = () => {
           target="_blank"
           rel="noopener nofollow"
         >
-          <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5" />
           <span className="sr-only">WhatsApp</span>
         </a>
       </Button>
