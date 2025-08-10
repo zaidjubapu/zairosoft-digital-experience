@@ -40,6 +40,21 @@ const Contact = () => {
     { icon: Globe, label: 'Global Reach', value: '25+ Countries' }
   ];
 
+  // Visibility tracking for WhatsApp button
+  const sectionRef = React.useRef<HTMLElement | null>(null);
+  const [isInView, setIsInView] = React.useState(false);
+
+  React.useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   // Success message after submission
   if (state.succeeded) {
     return (
@@ -54,21 +69,24 @@ const Contact = () => {
 
   // Form rendering if not submitted
   return (
-    <section id="contact" className="section-padding bg-card relative">
-      <Button
-        asChild size="icon"
-        className="absolute bottom-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
-        aria-label="Chat on WhatsApp"
-      >
-        <a
-          href="https://wa.me/971566554878?text=Hello%20I%20am%20interested%20in%20your%20services"
-          target="_blank"
-          rel="noopener nofollow"
+    <section ref={sectionRef} id="contact" className="section-padding bg-card relative">
+      {isInView && (
+        <Button
+          asChild
+          size="icon"
+          className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
+          aria-label="Chat on WhatsApp"
         >
-          <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5" />
-          <span className="sr-only">WhatsApp</span>
-        </a>
-      </Button>
+          <a
+            href="https://wa.me/971566554878?text=Hello%20I%20am%20interested%20in%20your%20services"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5" />
+            <span className="sr-only">WhatsApp</span>
+          </a>
+        </Button>
+      )}
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
