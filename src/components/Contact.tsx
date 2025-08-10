@@ -74,7 +74,7 @@ const Contact = () => {
         <Button
           asChild
           size="icon"
-          className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
+          className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring h-16 w-16"
           aria-label="Chat on WhatsApp"
         >
           <a
@@ -82,7 +82,7 @@ const Contact = () => {
             target="_blank"
             rel="noopener nofollow"
           >
-            <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5" />
+            <img src={whatsappIcon} alt="WhatsApp" className="h-[60px] w-[60px]" />
             <span className="sr-only">WhatsApp</span>
           </a>
         </Button>
