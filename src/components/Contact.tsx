@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Mail, Phone, MapPin, Send, Clock, Users, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, Users, Globe, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -54,6 +54,20 @@ const Contact = () => {
   // Form rendering if not submitted
   return (
     <section id="contact" className="section-padding bg-card">
+      <Button
+        asChild
+        className="fixed top-4 right-4 z-50 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring"
+        aria-label="Chat on WhatsApp"
+      >
+        <a
+          href="https://wa.me/971566554878?text=Hello%20I%20am%20interested%20in%20your%20services"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          <span className="sr-only">WhatsApp</span>
+        </a>
+      </Button>
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
